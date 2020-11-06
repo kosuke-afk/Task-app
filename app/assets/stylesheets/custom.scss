@@ -7,6 +7,7 @@ body {
   padding-top: 60px;
 }
 
+
 section {
   overflow: auto;
 }
@@ -50,23 +51,72 @@ p {
   line-height: 1.7em;
 }
 
+li {
+  text-align: -webkit-match-parent;
+}
+
+.col-md-7 .center .top-title {
+  font-style: italic;
+}
+
 /* ヘッダー */
+
+.dropdown-header {
+  background-color:rgba(200,200,200,0.5);
+}
+#header {
+  background-color: teal;
+}
+
+#dropdown-title {
+  color: white;
+  background-color: teal;
+}
+
+#dropdown-title:hover {
+  color: gray;
+}
+
 
 #logo {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
+  font-style: italic;
+  color: white;
+  text-transform: capitalize;
   letter-spacing: -1px;
+  margin-right: 10px;
   padding-top: 9px;
   font-weight: bold;
 }
 
+.nav .list .header-list {
+  float: right;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: transparent;
+}
+
+.nav .list .header-list:hover {
+  color: gray;
+}
+
+
+
+
 #logo:hover {
-  color: #fff;
+  color: gray;
   text-decoration: none;
 }
+
+.navbar .navi {
+  float: right;
+}
+
+
+
 
 /* デバッグウインドウ */
 
