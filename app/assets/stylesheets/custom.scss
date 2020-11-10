@@ -51,9 +51,7 @@ p {
   line-height: 1.7em;
 }
 
-li {
-  text-align: -webkit-match-parent;
-}
+
 
 .col-md-7 .center .top-title {
   font-style: italic;
@@ -115,6 +113,9 @@ li {
   float: right;
 }
 
+.navigate {
+  float: right;
+}
 
 
 
@@ -145,4 +146,10 @@ li {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+//フォーム
+
+.control {
+  margin-bottom: 10px;
 }
