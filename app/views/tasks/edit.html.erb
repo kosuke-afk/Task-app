@@ -1,0 +1,17 @@
+<% provide(:title, "Edit Task") %>
+<h1>タスク編集</h1>
+<div class="row">
+  <div>
+    <%= form_with( model: @task ,url: edit_user_task_path, local: true, method: :post) do |f| %>
+    
+      <%= f.label :name, class: "label-form" %>
+      <%= f.text_field :name, class: "form-control control" %>
+      
+      <%= f.label :description, class: "label-form" %>
+      <%= f.text_area :description, class: "form-control control", rows: 5 %>
+      
+      <%= f.submit "更新", class: "btn btn-lg btn-primary btn-form" %>
+      
+    <% end %>
+  </div>
+</div>
