@@ -1,8 +1,7 @@
 class TasksController < ApplicationController
  before_action :set_user
- before_action :set_task
+ before_action :set_task, only: [:show, :edit, :update]
  def show
-   @task = Task.find(params[:user_id])
  end
  
  def index
@@ -24,10 +23,15 @@ class TasksController < ApplicationController
  end
   
  def edit
-  @task = Task.find(params[:user_id])
  end
  
  def update
+   if @task.update_attributes(task_params)
+    flash[:success] = "タスクを更新しました。"
+    redirect_to user_tasks_url(@user)
+   else
+    render :new
+   end
  end
   
    private
@@ -37,8 +41,12 @@ class TasksController < ApplicationController
      end
      
      def set_task
-      @task = Task.find_by(user_id: params[:user_id])
+      unless @task = @user.tasks.find_by(id: params[:id])
+       flash[:danger] = "権限がありません。"
+       redirect_to root_path
+      end
      end
+    
    
      def task_params
         params.require(:task).permit(:name, :description)
