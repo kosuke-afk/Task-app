@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
  before_action :set_user
- before_action :set_task, only: [:show, :edit, :update]
+ before_action :set_task, only: [:show, :edit, :update,:destroy]
  def show
  end
  
@@ -32,6 +32,12 @@ class TasksController < ApplicationController
    else
     render :new
    end
+ end
+ 
+ def destroy
+  @task.destroy
+  flash[:danger] = "タスクを消去しました。"
+  redirect_to user_tasks_url @user
  end
   
    private
