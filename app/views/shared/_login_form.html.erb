@@ -1,5 +1,6 @@
 
 <%= form_with(scope: :session, url: login_path, local: true) do |f| %>
+  
   <%= f.label :email, class: "label-login" %>
   <%= f.email_field :email, class: 'form-control' %>
 
@@ -11,6 +12,6 @@
   <span>ログイン情報を記憶する</span>
   <% end %>
 
-  <%= f.submit "Log In", class: "btn btn-primary btn-block btn-login" %>
+  <%= f.submit "ログイン", class: "btn btn-primary btn-block btn-login" %>
 <% end %>
     
