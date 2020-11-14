@@ -1,10 +1,22 @@
 # coding: utf-8
 
-User.create!( name: "Sample User",
-              email: "sample@email.com",
-              password: "password",
-              password_confirmation: "password")
-              
-Task.create!( name: "タスク１",
-              description: "タスク１のお仕事",
-              user_id: 1)
+  User.create!( name: "Sample User",
+                email: "sample@email.com",
+                password: "password",
+                password_confirmation: "password",
+                admin: true)
+                
+  99.times do |n|
+    name = Faker::Name.name
+    email = "sample-#{n+1}@email.com"
+    password = "password"
+    User.create(name: name,
+                email: email,
+                password: password,
+                password_confirmation: password)
+  end
+                
+  Task.create!( name: "タスク１",
+                description: "タスク１のお仕事",
+                user_id: 1)
+                
