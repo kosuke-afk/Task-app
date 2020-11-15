@@ -15,8 +15,17 @@
                 password: password,
                 password_confirmation: password)
   end
-                
-  Task.create!( name: "タスク１",
-                description: "タスク１のお仕事",
-                user_id: 1)
-                
+  
+  puts "Users Created"
+  
+  admin_user = User.first
+  guest_user = User.find(2)
+      
+  50.times do |n|
+    task_name = "タスク#{n+1}"
+    description = "タスク#{n+1}の仕事内容"
+    admin_user.tasks.create!(name: task_name, description: description)
+    guest_user.tasks.create!(name: task_name, description: description)
+  end
+  
+  puts "Tasks Created"
